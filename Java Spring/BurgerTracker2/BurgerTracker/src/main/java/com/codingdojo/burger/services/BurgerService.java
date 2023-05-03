@@ -26,6 +26,10 @@ public class BurgerService {
     public Burger addBurger(Burger burger) {
         return burgerRepository.save(burger);
     }
+    //update a burger
+    public Burger updateBurger(Burger burger) {
+        return burgerRepository.save(burger);
+    }
     
     // retrieves a burger
     public Burger findBurger(Long id) {
