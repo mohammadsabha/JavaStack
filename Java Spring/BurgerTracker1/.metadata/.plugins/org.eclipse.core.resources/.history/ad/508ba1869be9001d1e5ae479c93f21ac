@@ -1,0 +1,5 @@
+package com.codingdojo.burger.repositories;
+
+public interface BurgerRepository {
+
+}

@@ -1,0 +1,40 @@
+package com.codingdojo.burger.controllers;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingdojo.burger.models.Burger;
+import com.codingdojo.burger.services.BurgerService;
+
+@RestController
+public class BurgerTracker1 {
+    private final BurgerService burgerService;
+    public BurgerTracker1 (BurgerService burgerService){
+        this.burgerService = burgerService;
+    }
+    @RequestMapping("/api/burgers")
+    public List<Burger> index() {
+        return burgerService.allBurgers();
+    }
+    
+    @RequestMapping(value="/api/burgers", method=RequestMethod.POST)
+    public Burger create(
+    		@RequestParam(value="name") String name, 
+    		@RequestParam(value="restaurantName") String restaurantName, 
+    		@RequestParam(value="rating") Integer rating,
+    		@RequestParam(value="notes") String notes) {
+    	Burger burger = new Burger(name, restaurantName, rating, notes);
+        return burgerService.createBurger(burger);
+    }
+    
+    @RequestMapping("/api/books/{id}")
+    public Burger show(@PathVariable("id") Long id) {
+    	Burger burger = burgerService.findBurger(id);
+        return burger;
+    }
+}

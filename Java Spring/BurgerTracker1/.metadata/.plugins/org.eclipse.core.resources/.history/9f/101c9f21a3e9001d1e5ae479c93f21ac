@@ -1,0 +1,38 @@
+package com.codingdojo.burger.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.codingdojo.burger.models.Burger;
+import com.codingdojo.burger.services.BurgerService;
+
+import jakarta.validation.Valid;
+
+@Controller
+public class BurgerTracker1 {
+    private final BurgerService burgerService;
+    
+    public BurgerTracker1 (BurgerService burgerService){
+    	
+        this.burgerService = burgerService;
+    }
+    
+    @GetMapping("/")
+    public String newBook(@ModelAttribute("burger") Burger burger, Model model) {
+        return "index.jsp";
+    }
+    
+    @PostMapping("/burger")
+    public String add(@Valid @ModelAttribute("burger") Burger burger, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "index.jsp";
+        } else {
+            burgerService.addBurger(burger);
+            return "redirect:/burger";
+        }
+    }
+}

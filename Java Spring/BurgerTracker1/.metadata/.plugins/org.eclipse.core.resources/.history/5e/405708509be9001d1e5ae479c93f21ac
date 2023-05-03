@@ -1,0 +1,5 @@
+package com.codingdojo.burger.models;
+
+public interface BurgerRepository {
+
+}

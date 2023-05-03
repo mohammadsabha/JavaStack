@@ -1,0 +1,5 @@
+package com.codingdojo.burger.models;
+
+public class Burger {
+
+}

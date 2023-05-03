@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/shathamorales/Desktop/Coding-Dojo/java_stack/_java/JavaSpring/BurgerTracker1/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3589279413.index
+2361744286.index
+3804430452.index
+947203800.index
+2664741089.index
+3090484637.index
+1827567663.index
