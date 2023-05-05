@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.body {
+	width:80%;
+	margin:0px auto;
+}
+h1 {
+	color:blue;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.alert alert-danger {
+	color:red;
+}
