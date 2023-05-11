@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.body {
+	width:60%;
+	margin: 0px auto;
+	margin-top:20px;
+}
+.body h1 {
+	color:#9900ff;
+}
+.sign {
+	display:flex;
+	justify-content:space-between;
+}
+.sign {
+	margin-top:20px;
+}
+.button {
+	margin-top:10px;
+}
+.nav {
+	display:flex;
+	justify-content:space-between;
+	margin-bottom:20px;
+}
+.Shelf {
+	margin-top:10px;
+}
