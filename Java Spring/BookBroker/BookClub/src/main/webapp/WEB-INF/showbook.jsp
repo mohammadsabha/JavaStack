@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- c:out ; c:forEach etc. --> 
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!-- Formatting (dates) --> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
+<!-- form:form -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!-- for rendering errors on PUT routes -->
+<%@ page isErrorPage="true" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Read Share</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script><!-- change to match your file/naming structure -->
+</head>
+<body>
+   <div class="body">
+   		<div class="nav">
+   			<h1><c:out value="${thisBook.title}"/></h1>
+   			<a href="/books">Back to the shelves</a>
+   			<a href="/books/${thisBook.id}/edit">Edit</a>
+   		</div>
+   		<div class="status">
+   			<h3> ${thisUser.userName} read ${thisBook.title} by ${thisBook.author} </h3>
+   			<p>Here are ${thisUser.userName} 's thoughts</p>
+   			<p>${thisBook.thought} </p>
+   			<a class="btn btn-primary" href="/books/${thisBook.id}/delete">Delete</a>
+   		</div>
+   		<h3></h3>
+   		<p></p>
+   </div>
+</body>
+</html>
+
